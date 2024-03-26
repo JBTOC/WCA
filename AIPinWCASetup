@@ -1,13 +1,21 @@
 #import requests
 import pip._vendor.requests as requests
+import http.client
+
+conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+
+my_API_Key = "d0ced636d8212c0076ca83feb0b7dc11"
 
 url = "https://api-football-v1.p.rapidapi.com/v2/countries"
 
 headers = {
-    'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
-    'x-rapidapi-key': "YOUR RAPID API KEY"
+    'x-rapidapi-host': "https://v3.football.api-sports.io/",
+    'x-rapidapi-key': my_API_Key
     }
 
-response = requests.request("GET", url, headers=headers)
+conn.request("GET", "/leagues", headers=headers)
 
-print(response.text)
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
