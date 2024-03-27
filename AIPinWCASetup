@@ -1,3 +1,5 @@
+# This is using example from API football. http rather than requests.
+
 #import requests
 import pip._vendor.requests as requests
 import http.client
@@ -6,16 +8,42 @@ conn = http.client.HTTPSConnection("v3.football.api-sports.io")
 
 my_API_Key = "d0ced636d8212c0076ca83feb0b7dc11"
 
-url = "https://api-football-v1.p.rapidapi.com/v2/countries"
+#url = "https://api-football-v1.p.rapidapi.com/v2/countries"
 
 headers = {
     'x-rapidapi-host': "https://v3.football.api-sports.io/",
     'x-rapidapi-key': my_API_Key
     }
 
-conn.request("GET", "/leagues", headers=headers)
+# conn.request("GET", "/leagues", headers=headers)
+
+# res = conn.getresponse()
+# leaguedata = res.read()
+
+#print(leaguedata.decode("utf-8"))
+
+conn.request("GET", "/fixtures/rounds?season=2023&league=39&current=true", headers=headers)
+
+res = conn.getresponse()
+rounddata = res.read()
+
+print(rounddata.decode("utf-8")) # This only prints out the round name - useless
+
+#get("https://v3.football.api-sports.io/fixtures?league=61&season=2019&round=Regular Season - 1");
+#Documentation is wrong. Its says the following works BUT get problens with spaces in URL from fixture round number
+
+conn.request("GET", "/fixtures/rounds?season=2023&league=39&round=Regular Season - 29", headers=headers)
+#conn.request("GET", "/fixtures?season=2023&league=39&from=2023-03-29&to=2023-04-07", headers=headers)
+#conn.request("GET", "/fixtures?season=2023&league=39&current=true", headers=headers)
+
+
+# params = {'from':"2023-03-29", 'to':"2023-04-01"}
+# url = "https://api-football-v1.p.rapidapi.com/v3/Fixtures"
+
+# conn.request("GET", "/fixtures?round=Regular Season - 29", headers=headers)
+# conn.request("GET", "/fixtures?season=2023&league=39&from=2023-02-29&to=2023-03-07", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
-
 print(data.decode("utf-8"))
+print (data)
