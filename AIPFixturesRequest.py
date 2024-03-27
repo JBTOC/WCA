@@ -7,7 +7,7 @@ headers = {
     'x-rapidapi-key': my_API_Key
     }
 
-params = {'season': 2023, 'league': 39, 'round': "Regular Season - 29"}
+params = {'season': 2023, 'league': 39, 'round': "Regular Season - 30"}
 url = "https://v3.football.api-sports.io/fixtures"
 
 response = requests.get(url=url,
