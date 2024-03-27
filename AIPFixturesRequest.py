@@ -8,3 +8,11 @@ headers = {
     }
 
 params = {'season': 2023, 'league': 39, 'round': "Regular Season - 29"}
+url = "https://v3.football.api-sports.io/fixtures"
+
+response = requests.get(url=url,
+             params=params,
+             headers=headers)
+jsonFixtures = response.json()
+
+#return jsonFixtures
