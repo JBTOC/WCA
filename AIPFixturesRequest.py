@@ -7,13 +7,15 @@ headers = {
     'x-rapidapi-key': my_API_Key
     }
 
-params = {'season': 2023, 'league': 39, 'round': "Regular Season - 30"}
+#params = {'season': 2023, 'league': 39, 'round': "Regular Season - 30"}
 url = "https://v3.football.api-sports.io/fixtures"
 
-response = requests.get(url=url,
+#return jsonFixtures
+def fixtureListForRound (season, league, round):
+    roundNumAsString = f'Regular Season - {round}'
+    params = {'season': season, 'league': league, 'round': roundNumAsString}
+    response = requests.get(url=url,
              params=params,
              headers=headers)
-jsonFixtures = response.json()
-
-print (jsonFixtures)
-#return jsonFixtures
+    jsonFixtures = response.json()
+    return jsonFixtures
