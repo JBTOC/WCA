@@ -15,4 +15,5 @@ response = requests.get(url=url,
              headers=headers)
 jsonFixtures = response.json()
 
+print (jsonFixtures)
 #return jsonFixtures
