@@ -19,3 +19,11 @@ def fixtureListForRound (season, league, round):
              headers=headers)
     jsonFixtures = response.json()
     return jsonFixtures
+
+def fixtureListForDateRange (season, league, fromDate, toDate):
+    params = {'season': season, 'league': league, 'from': fromDate, 'to': toDate}
+    response = requests.get(url=url,
+             params=params,
+             headers=headers)
+    jsonFixtures = response.json()
+    return jsonFixtures
