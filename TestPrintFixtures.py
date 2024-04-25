@@ -1,9 +1,9 @@
 # Assisted by WCA for GP
 # Latest GenAI contribution: granite-20B-code-instruct-v2 model
 import json
-import AIPFixturesRequest
+import AIPFixtureList
 
-from AIPFixturesRequest import fixtureListForRound
+from AIPFixtureList import fixtureListForRound
 
 def saveFixtures (fixtures, filename):
     print ("oops not written yet")
@@ -31,22 +31,19 @@ def printFixtures (fixtures):
 # saveFixtures (fixtures, '/Users/joc/Education/WCA/Fixtures.json')
 print("In module products __package__, __name__ ==", __package__, __name__)
 
-fixtures = AIPFixturesRequest.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-02")
+fixtures = AIPFixtureList.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-02")
 printFixtures (fixtures)
-fixtures = AIPFixturesRequest.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-02")
+fixtures = AIPFixtureList.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-02")
 printFixtures (fixtures)
-fixtures = AIPFixturesRequest.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-09")
+fixtures = AIPFixtureList.fixtureListForDateRange (2023, 39, "2024-03-30", "2024-04-09")
 printFixtures (fixtures)
-fixtures = AIPFixturesRequest.fixtureListForRound (2023, 39, 1)
+fixtures = AIPFixtureList.fixtureListForRound (2023, 39, 1)
 printFixtures (fixtures)
-fixtures = AIPFixturesRequest.fixtureListForRound (2023, 39, 1)
+fixtures = AIPFixtureList.fixtureListForRound (2023, 39, 1)
 printFixtures (fixtures)
-fixtures = AIPFixturesRequest.fixtureListForRound (2023, 39, 2)
+fixtures = AIPFixtureList.fixtureListForRound (2023, 39, 2)
 printFixtures (fixtures)
-# saveFixtures (fixtures, '/Users/joc/Education/WCA/Fixtures.json')
-# fixtures = AIPFixturesRequest.fixtureListForDateRange (2023, 39, "2024-04-23", "2024-04-25")
-# printFixtures (fixtures)
-# saveFixtures (fixtures, '/Users/joc/Education/WCA/Fixtures.json')
-# fixtures = AIPFixturesRequest.fixtureListForDateRange (2023, 39, "2024-04-23", "2024-05-25")
-# printFixtures (fixtures)
-# saveFixtures (fixtures, '/Users/joc/Education/WCA/Fixtures.json')
+fixtures = AIPFixtureList.fixtureListForRound (2023, 39, 37)
+printFixtures (fixtures)
+fixtures = AIPFixtureList.fixtureListForRound (2023, 39, 39)
+printFixtures (fixtures)
